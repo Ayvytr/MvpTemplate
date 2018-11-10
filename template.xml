@@ -18,6 +18,33 @@
         suggest="${layoutToActivity(layoutName)}"
         default="MainActivity"
         help="The name of the activity class to create" />
+		
+	<parameter
+        id="presenterClass"
+        name="Presenter Name"
+        type="string"
+        constraints="class|unique|nonempty"
+        suggest="MainPresenter"
+        default="MainPresenter"
+        help="The name of the Presenter class to create" />
+		
+	<parameter
+        id="contractClass"
+        name="Contract Name"
+        type="string"
+        constraints="class|unique|nonempty"
+        suggest="MainContract"
+        default="MainContract"
+        help="The name of the Contract class to create" />
+		
+	<parameter
+        id="modelClass"
+        name="Model Name"
+        type="string"
+        constraints="class|unique|nonempty"
+        suggest="MainModel"
+        default="MainModel"
+        help="The name of the Contract class to create" />
 
     <parameter
         id="generateLayout"
@@ -31,7 +58,7 @@
         name="Layout Name"
         type="string"
         constraints="layout|unique|nonempty"
-        suggest="${activityToLayout(activityClass)}"
+        suggest="${activityToLayout(baseMvpActivity)}"
         default="activity_main"
         visibility="generateLayout"
         help="The name of the layout to create for the activity" />
@@ -42,13 +69,13 @@
         type="boolean"
         default="false"
         help="If true, this activity will have a CATEGORY_LAUNCHER intent filter, making it visible in the launcher" />
-
-    <parameter
-        id="backwardsCompatibility"
-        name="Backwards Compatibility (AppCompat)"
+		
+	<parameter
+        id="isRx"
+        name="With RxLifecycle support."
         type="boolean"
-        default="true"
-        help="If false, this activity base class will be Activity instead of AppCompatActivity" />
+        default="false"
+        help="如果为true，BaseMvpActivity将继承RxAppCompatActivity" />
 
     <parameter
         id="packageName"
@@ -65,37 +92,6 @@
         visibility="isInstantApp!false"
         help="If true, this activity will be associated with URL, improving discovery of your Instant App" />
 
-    <parameter
-        id="instantAppActivityHost"
-        name="Instant App URL Host"
-        type="string"
-        suggest="${companyDomain}"
-        default="instantapp.example.com"
-        visibility="isInstantApp!false"
-        enabled="includeInstantAppUrl"
-        help="The domain to use in the Instant App route for this activity"/>
-
-    <parameter
-        id="instantAppActivityRouteType"
-        name="Instant App URL Route Type"
-        type="enum"
-        default="pathPattern"
-        visibility="isInstantApp!false"
-        enabled="includeInstantAppUrl"
-        help="The type of route to use in the Instant App route for this activity" >
-        <option id="path">Path</option>
-        <option id="pathPrefix">Path Prefix</option>
-        <option id="pathPattern">Path Pattern</option>
-    </parameter>
-
-    <parameter
-        id="instantAppActivityRoute"
-        name="Instant App URL Route"
-        type="string"
-        default="/.*"
-        visibility="isInstantApp!false"
-        enabled="includeInstantAppUrl"
-        help="The route to use in the Instant App route for this activity"/>
 
     <!-- 128x128 thumbnails relative to template.xml -->
     <thumbs>

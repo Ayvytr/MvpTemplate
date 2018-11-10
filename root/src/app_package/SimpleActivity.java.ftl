@@ -1,24 +1,38 @@
-package ${packageName};
+package ${packageName}.view.activity;
 
-import ${superClassFqcn};
+import com.ayvytr.mvprxlifecycle.BaseMvpActivity;
+import ${packageName}.presenter.${presenterClass};
 import android.os.Bundle;
-<#if (includeCppSupport!false) && generateLayout>
-import android.widget.TextView;
-</#if>
+import android.support.annotation.Nullable;
 
-public class ${activityClass} extends ${superClass} {
+public class ${activityClass} extends ${baseMvpActivity}<MainPresenter> implements MainContract.View {
+	
+	@Override
+    protected MainPresenter getPresenter() {
+        return new MainPresenter(new MainModel(), this);
+    }
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-<#if generateLayout>
-        setContentView(R.layout.${layoutName});
-       <#include "../../../../common/jni_code_usage.java.ftl">
-<#elseif includeCppSupport!false>
+    public void initExtra() {
 
-        // Example of a call to a native method
-        android.util.Log.d("${activityClass}", stringFromJNI());
-</#if>
     }
-<#include "../../../../common/jni_code_snippet.java.ftl">
+
+    @Override
+    public void initView(Bundle savedInstanceState) {
+
+    }
+
+    @Override
+    public void initData(@Nullable Bundle savedInstanceState) {
+
+    }
+
+    @Override
+    public int getContentViewRes() {
+	<#if generateLayout>
+        return R.layout.${layoutName};
+	<#else>	
+        return 0;
+	</#if>
+    }
 }

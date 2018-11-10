@@ -3,6 +3,10 @@
 <recipe>
     <#include "../common/recipe_manifest.xml.ftl" />
     <@kt.addAllKotlinDependencies />
+	
+	<#if !(hasDependency('com.ayvytr:mvp-rxlifecycle'))>
+        <dependency mavenUrl="com.ayvytr:mvp-rxlifecycle:+"/>
+    </#if>
 
 <#if generateLayout>
     <#include "../common/recipe_simple.xml.ftl" />
@@ -10,7 +14,18 @@
 </#if>
 
     <instantiate from="root/src/app_package/SimpleActivity.${ktOrJavaExt}.ftl"
-                   to="${escapeXmlAttribute(srcOut)}/${activityClass}.${ktOrJavaExt}" />
+                   to="${escapeXmlAttribute(srcOut)}/view/activity/${activityClass}.${ktOrJavaExt}" />
+				   
+	<instantiate from="root/src/app_package/MainPresenter.${ktOrJavaExt}.ftl"
+                   to="${escapeXmlAttribute(srcOut)}/presenter/${presenterClass}.${ktOrJavaExt}" />
+				   
+	<instantiate from="root/src/app_package/MainContract.${ktOrJavaExt}.ftl"
+                   to="${escapeXmlAttribute(srcOut)}/contract/${contractClass}.${ktOrJavaExt}" />
+				   
+	<instantiate from="root/src/app_package/MainModel.${ktOrJavaExt}.ftl"
+                   to="${escapeXmlAttribute(srcOut)}/model/${modelClass}.${ktOrJavaExt}" />
+
+				   
     <open file="${escapeXmlAttribute(srcOut)}/${activityClass}.${ktOrJavaExt}" />
 
 </recipe>
