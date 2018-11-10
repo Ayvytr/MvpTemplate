@@ -5,46 +5,19 @@
     name="Mvp Activity"
     minApi="9"
     minBuildApi="14"
-    description="创建MvpActivity（当前由于未找到类似layoutToActivity等函数的编写方法，请自行填写或者修改Presenter等名称，As会按照你填的名称创建Presenter等类）">
+    description="创建MvpActivity，请注意Activity填写前缀即可，比如Main，MainActivity等文件会自动生成">
 
     <category value="Activity" />
     <formfactor value="Mobile" />
 
     <parameter
-        id="activityClass"
-        name="Activity Name"
+        id="className"
+        name="Activity前缀（不要写全名）"
         type="string"
         constraints="class|unique|nonempty"
-        suggest="${layoutToActivity(layoutName)}"
-        default="MainActivity"
-        help="The name of the activity class to create" />
-		
-	<parameter
-        id="presenterClass"
-        name="Presenter Name"
-        type="string"
-        constraints="class|unique|nonempty"
-        suggest="MainPresenter"
-        default="MainPresenter"
-        help="The name of the Presenter class to create" />
-		
-	<parameter
-        id="contractClass"
-        name="Contract Name"
-        type="string"
-        constraints="class|unique|nonempty"
-        suggest="MainContract"
-        default="MainContract"
-        help="The name of the Contract class to create" />
-		
-	<parameter
-        id="modelClass"
-        name="Model Name"
-        type="string"
-        constraints="class|unique|nonempty"
-        suggest="MainModel"
-        default="MainModel"
-        help="The name of the Contract class to create" />
+        suggest="Main"
+        default="Main"
+        help="Activity前缀（不要写全名）" />
 
     <parameter
         id="generateLayout"
@@ -58,7 +31,7 @@
         name="Layout Name"
         type="string"
         constraints="layout|unique|nonempty"
-        suggest="${activityToLayout(baseMvpActivity)}"
+        suggest="${activityToLayout(className)}"
         default="activity_main"
         visibility="generateLayout"
         help="The name of the layout to create for the activity" />

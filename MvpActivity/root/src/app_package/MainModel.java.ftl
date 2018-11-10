@@ -1,8 +1,8 @@
 package ${packageName}.model;
 
-import ${packageName}.contract.MainContract;
+import ${packageName}.contract.${className}Contract;
 
-public class MainModel implements MainContract.Model {
+public class ${className}Model implements ${className}Contract.Model {
 
     @Override
     public void onDestroy() {

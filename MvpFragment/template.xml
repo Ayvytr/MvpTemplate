@@ -17,7 +17,7 @@
         type="string"
         constraints="class|nonempty|unique"
         default="Main"
-        help="The name of the fragment class to create" />
+        help="Fragment前缀(不要写全名)" />
 		
 	<parameter
         id="generateLayout"

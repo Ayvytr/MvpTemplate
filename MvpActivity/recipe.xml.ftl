@@ -14,18 +14,17 @@
 </#if>
 
     <instantiate from="root/src/app_package/SimpleActivity.${ktOrJavaExt}.ftl"
-                   to="${escapeXmlAttribute(srcOut)}/view/activity/${activityClass}.${ktOrJavaExt}" />
+                   to="${escapeXmlAttribute(srcOut)}/view/activity/${className}Activity.${ktOrJavaExt}" />
 				   
 	<instantiate from="root/src/app_package/MainPresenter.${ktOrJavaExt}.ftl"
-                   to="${escapeXmlAttribute(srcOut)}/presenter/${presenterClass}.${ktOrJavaExt}" />
+                   to="${escapeXmlAttribute(srcOut)}/presenter/${className}Presenter.${ktOrJavaExt}" />
 				   
 	<instantiate from="root/src/app_package/MainContract.${ktOrJavaExt}.ftl"
-                   to="${escapeXmlAttribute(srcOut)}/contract/${contractClass}.${ktOrJavaExt}" />
+                   to="${escapeXmlAttribute(srcOut)}/contract/${className}Contract.${ktOrJavaExt}" />
 				   
 	<instantiate from="root/src/app_package/MainModel.${ktOrJavaExt}.ftl"
-                   to="${escapeXmlAttribute(srcOut)}/model/${modelClass}.${ktOrJavaExt}" />
-
+                   to="${escapeXmlAttribute(srcOut)}/model/${className}Model.${ktOrJavaExt}" />
 				   
-    <open file="${escapeXmlAttribute(srcOut)}/view/activity/${activityClass}.${ktOrJavaExt}" />
+    <open file="${escapeXmlAttribute(srcOut)}/view/activity/${className}Activity.${ktOrJavaExt}" />
 
 </recipe>

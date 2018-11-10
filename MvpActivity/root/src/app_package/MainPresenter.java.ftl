@@ -3,17 +3,17 @@ package ${packageName}.presenter;
 import android.support.annotation.NonNull;
 
 import com.ayvytr.mvpbase.BasePresenter;
-import ${packageName}.contract.MainContract;
+import ${packageName}.contract.${className}Contract;
 
-public class ${presenterClass} extends BasePresenter<MainContract.Model, MainContract.View> {
-    public ${presenterClass}() {
+public class ${className}Presenter extends BasePresenter<${className}Contract.Model, ${className}Contract.View> {
+    public ${className}Presenter() {
     }
 
-    public ${presenterClass}(@NonNull MainContract.Model model, @NonNull MainContract.View view) {
+    public ${className}Presenter(@NonNull ${className}Contract.Model model, @NonNull ${className}Contract.View view) {
         super(model, view);
     }
 
-    public ${presenterClass}(@NonNull MainContract.View view) {
+    public ${className}Presenter(@NonNull ${className}Contract.View view) {
         super(view);
     }
 }
