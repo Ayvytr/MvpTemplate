@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+<template
+    format="5"
+    revision="3"
+    name="MvpFragment"
+    description="创建MvpFragment."
+    minApi="7"
+    minBuildApi="8">
+
+    <category value="Fragment" />
+
+    <dependency name="android-support-v4" revision="8" />
+
+    <parameter
+        id="className"
+        name="Fragment Name"
+        type="string"
+        constraints="class|nonempty|unique"
+        default="MainFragment"
+        help="The name of the fragment class to create" />
+		
+	<parameter
+        id="presenterClass"
+        name="Presenter Name"
+        type="string"
+        constraints="class|unique|nonempty"
+        suggest="MainPresenter"
+        default="MainPresenter"
+        help="The name of the Presenter class to create" />
+		
+	<parameter
+        id="contractClass"
+        name="Contract Name"
+        type="string"
+        constraints="class|unique|nonempty"
+        suggest="MainContract"
+        default="MainContract"
+        help="The name of the Contract class to create" />
+		
+	<parameter
+        id="modelClass"
+        name="Model Name"
+        type="string"
+        constraints="class|unique|nonempty"
+        suggest="MainModel"
+        default="MainModel"
+        help="The name of the Contract class to create" />
+		
+	<parameter
+        id="generateLayout"
+        name="Generate Layout File"
+        type="boolean"
+        default="true"
+        help="If true, a layout file will be generated" />
+
+    <parameter
+        id="layoutName"
+        name="Layout Name"
+        type="string"
+        constraints="layout|unique|nonempty"
+        suggest="fragment_${classToResource(className)}"
+        default="fragment_main"
+        visibility="generateLayout"
+        help="The name of the layout to create" />
+
+	<parameter
+        id="packageName"
+        name="Package name"
+        type="string"
+        constraints="package"
+        default="com.mycompany.myapp" />
+		
+    <thumbs>
+        <thumb>template_blank_fragment.png</thumb>
+    </thumbs>
+
+    <globals file="globals.xml.ftl" />
+    <execute file="recipe.xml.ftl" />
+
+</template>
