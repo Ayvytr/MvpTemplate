@@ -2,8 +2,8 @@
 <template
     format="5"
     revision="3"
-    name="MvpFragment"
-    description="创建MvpFragment.请注意：Fragment名称填写前缀就可以了，比如MainFragment，填写Main即可，生成的文件会自动生成MainFragment等文件"
+    name="Mvp Fragment"
+    description="创建MvpFragment.请注意：Fragment名称填写前缀即可，比如MainFragment，填写Main即可，MainFragment等文件会自动生成"
     minApi="7"
     minBuildApi="8">
 
