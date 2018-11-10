@@ -3,7 +3,7 @@
     format="5"
     revision="3"
     name="MvpFragment"
-    description="创建MvpFragment."
+    description="创建MvpFragment.请注意：Fragment名称填写前缀就可以了，比如MainFragment，填写Main即可，生成的文件会自动生成MainFragment等文件"
     minApi="7"
     minBuildApi="8">
 
@@ -13,38 +13,11 @@
 
     <parameter
         id="className"
-        name="Fragment Name"
+        name="Fragment前缀(不要写全名)"
         type="string"
         constraints="class|nonempty|unique"
-        default="MainFragment"
+        default="Main"
         help="The name of the fragment class to create" />
-		
-	<parameter
-        id="presenterClass"
-        name="Presenter Name"
-        type="string"
-        constraints="class|unique|nonempty"
-        suggest="MainPresenter"
-        default="MainPresenter"
-        help="The name of the Presenter class to create" />
-		
-	<parameter
-        id="contractClass"
-        name="Contract Name"
-        type="string"
-        constraints="class|unique|nonempty"
-        suggest="MainContract"
-        default="MainContract"
-        help="The name of the Contract class to create" />
-		
-	<parameter
-        id="modelClass"
-        name="Model Name"
-        type="string"
-        constraints="class|unique|nonempty"
-        suggest="MainModel"
-        default="MainModel"
-        help="The name of the Contract class to create" />
 		
 	<parameter
         id="generateLayout"

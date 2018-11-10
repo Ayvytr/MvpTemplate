@@ -5,14 +5,16 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 
 import com.ayvytr.mvprxlifecycle.BaseMvpFragment;
-import ${packageName}.presenter.${presenterClass};
-import ${packageName}.contract.${contractClass};
-import ${packageName}.model.${modelClass};
+import ${packageName}.presenter.${className}Presenter;
+import ${packageName}.contract.${className}Contract;
+import ${packageName}.model.${className}Model;
 
-public class ${className} extends BaseMvpFragment<MainPresenter> implements MainContract.View {
+public class ${className}Fragment extends BaseMvpFragment<${className}Presenter> 
+	implements ${className}Contract.View {
+	
     @Override
-    protected MainPresenter getPresenter() {
-        return new MainPresenter(new MainModel(), this);
+    protected ${className}Presenter getPresenter() {
+        return new ${className}Presenter(new ${className}Model(), this);
     }
 
     @Override
