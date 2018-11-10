@@ -2,6 +2,8 @@ package ${packageName}.view.activity;
 
 import com.ayvytr.mvprxlifecycle.BaseMvpActivity;
 import ${packageName}.presenter.${presenterClass};
+import ${packageName}.contract.${contractClass};
+import ${packageName}.model.${modelClass};
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 

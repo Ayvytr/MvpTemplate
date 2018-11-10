@@ -5,7 +5,7 @@
     name="Mvp Activity"
     minApi="9"
     minBuildApi="14"
-    description="Creates a new mvp activity">
+    description="创建MvpActivity">
 
     <category value="Activity" />
     <formfactor value="Mobile" />

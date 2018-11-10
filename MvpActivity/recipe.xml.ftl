@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <#import "root://activities/common/kotlin_macros.ftl" as kt>
 <recipe>
-    <#include "../common/recipe_manifest.xml.ftl" />
+    <#include "recipe_manifest.xml.ftl" />
     <@kt.addAllKotlinDependencies />
 	
 	<#if !(hasDependency('com.ayvytr:mvp-rxlifecycle'))>
@@ -9,7 +9,7 @@
     </#if>
 
 <#if generateLayout>
-    <#include "../common/recipe_simple.xml.ftl" />
+    <#include "recipe_layout.xml.ftl" />
     <open file="${escapeXmlAttribute(resOut)}/layout/${layoutName}.xml" />
 </#if>
 
@@ -26,6 +26,6 @@
                    to="${escapeXmlAttribute(srcOut)}/model/${modelClass}.${ktOrJavaExt}" />
 
 				   
-    <open file="${escapeXmlAttribute(srcOut)}/${activityClass}.${ktOrJavaExt}" />
+    <open file="${escapeXmlAttribute(srcOut)}/view/activity/${activityClass}.${ktOrJavaExt}" />
 
 </recipe>
