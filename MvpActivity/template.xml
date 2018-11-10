@@ -5,7 +5,7 @@
     name="Mvp Activity"
     minApi="9"
     minBuildApi="14"
-    description="创建MvpActivity">
+    description="创建MvpActivity（当前由于未找到类似layoutToActivity等函数的编写方法，请自行填写或者修改Presenter等名称，As会按照你填的名称创建Presenter等类）">
 
     <category value="Activity" />
     <formfactor value="Mobile" />
