@@ -5,15 +5,17 @@
     <@kt.addAllKotlinDependencies />
 	
 	<#if !(hasDependency('com.ayvytr:mvp-rxlifecycle'))>
-        <dependency mavenUrl="com.ayvytr:mvp-rxlifecycle:+"/>
+        <dependency mavenUrl="com.ayvytr:mvp-rxlifecycle:1.2.6"/>
     </#if>
 
 <#if generateLayout>
-    <#include "recipe_layout.xml.ftl" />
-    <open file="${escapeXmlAttribute(resOut)}/layout/${layoutName}.xml" />
+	<instantiate from="root/res/layout/layout.xml.ftl"
+				 to="${escapeXmlAttribute(resOut)}/layout/${escapeXmlAttribute(layoutName)}.xml" />
+
+    <open file="${escapeXmlAttribute(resOut)}/layout/${escapeXmlAttribute(layoutName)}.xml" />
 </#if>
 
-    <instantiate from="root/src/app_package/SimpleActivity.${ktOrJavaExt}.ftl"
+    <instantiate from="root/src/app_package/MainActivity.${ktOrJavaExt}.ftl"
                    to="${escapeXmlAttribute(srcOut)}/view/activity/${className}Activity.${ktOrJavaExt}" />
 				   
 	<instantiate from="root/src/app_package/MainPresenter.${ktOrJavaExt}.ftl"
