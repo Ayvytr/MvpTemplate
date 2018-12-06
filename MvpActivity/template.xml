@@ -42,13 +42,6 @@
         type="boolean"
         default="false"
         help="If true, this activity will have a CATEGORY_LAUNCHER intent filter, making it visible in the launcher" />
-		
-	<parameter
-        id="isRx"
-        name="With RxLifecycle support."
-        type="boolean"
-        default="false"
-        help="如果为true，BaseMvpActivity将继承RxAppCompatActivity" />
 
     <parameter
         id="packageName"

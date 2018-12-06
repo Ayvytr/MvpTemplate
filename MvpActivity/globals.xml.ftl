@@ -9,7 +9,7 @@
 	<global id="baseMvpActivity" type="string" value="BaseMvpActivity" />	
 	
 	<global id="basePresenter" type="string" value="BasePresenter" />
-	<global id="basePresenterPackage" type="string" value="com.ayvytr.mvpbase.BasePresenter" />
+	<global id="basePresenterPackage" type="string" value="com.ayvytr.mvp.BasePresenter" />
 
 
     <#include "../common/common_globals.xml.ftl" /> 

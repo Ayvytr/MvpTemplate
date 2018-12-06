@@ -4,7 +4,7 @@ package ${packageName}.view.fragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 
-import com.ayvytr.mvprxlifecycle.BaseMvpFragment;
+import com.ayvytr.rxlifecycle.BaseMvpFragment;
 import ${packageName}.presenter.${className}Presenter;
 import ${packageName}.contract.${className}Contract;
 import ${packageName}.model.${className}Model;

@@ -2,7 +2,7 @@ package ${packageName}.presenter;
 
 import android.support.annotation.NonNull;
 
-import com.ayvytr.mvpbase.BasePresenter;
+import com.ayvytr.mvp.BasePresenter;
 import ${packageName}.contract.${className}Contract;
 
 public class ${className}Presenter extends BasePresenter<${className}Contract.Model, ${className}Contract.View> {

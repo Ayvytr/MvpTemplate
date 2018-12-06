@@ -1,6 +1,6 @@
 package ${packageName}.view.activity;
 
-import com.ayvytr.mvprxlifecycle.BaseMvpActivity;
+import com.ayvytr.rxlifecycle.BaseMvpActivity;
 import ${packageName}.presenter.${className}Presenter;
 import ${packageName}.contract.${className}Contract;
 import ${packageName}.model.${className}Model;
