@@ -1,13 +1,14 @@
-package ${packageName}.view.activity
+package ${packageName}.view.fragment
 
-import com.ayvytr.rxlifecycle.BaseMvpActivity
+import android.os.Bundle
+
+import com.ayvytr.rxlifecycle.BaseMvpFragment
 import ${packageName}.presenter.${className}Presenter
 import ${packageName}.contract.${className}Contract
 import ${packageName}.model.${className}Model
-import android.os.Bundle
 
-class ${className}Activity : BaseMvpActivity<${className}Presenter>(), ${className}Contract.View {
-	
+class ${className}Fragment : BaseMvpFragment<${className}Presenter>(), ${className}Contract.View {
+
 	override fun getPresenter(): ${className}Presenter {
         return ${className}Presenter(${className}Model(), this)
     }
